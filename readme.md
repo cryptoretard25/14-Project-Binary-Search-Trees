@@ -18,7 +18,27 @@
       console.log your tree in a structured format. This function will expect to receive the root of your tree as the
       value for the node parameter.
     </p>
-  </li>
+    <code>
+     <p>
+const prettyPrint = (node, prefix = "", isLeft = true) => {</p>
+<p>
+  if (node.right !== null) {
+    </p>
+    <p>
+    prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
+  <p>
+  }
+  </p>
+      </p>
+      <p>
+  console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);</p>
+  <p>
+  if (node.left !== null) {</p>
+    <p>prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);</p>
+ <p> }</p>
+<p>};</p>
+    </code>
+    </li>
   <li>Write an insert and delete functions which accepts a value to insert/delete (you’ll have to deal with several
     cases for delete such as when a node has children or not). If you need additional resources, check out these two
     articles on inserting and deleting, or this video with several visual examples.</li>
